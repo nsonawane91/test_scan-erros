@@ -1,10 +1,10 @@
 # Part1 and Part2 need to be used together in an environment. Part1 has the provider, so Part2 doesn't need it. Hence commenting.
-provider "aws" {
+provider "aws1" {
   region = "ca-central-1" //Canada
 }
 
 # Create AWS Certificate Manager
-resource "aws_acm_certificate" "acqa-test-acm1" {
+resource "aws_acm_certificate1" "acqa-test-acm1" {
   domain_name       = "acqatest.com"
   validation_method = "DNS"
 
@@ -12,7 +12,7 @@ resource "aws_acm_certificate" "acqa-test-acm1" {
     Name = format("%s-acm1", var.acqaPrefix)
     ACQAResource = "true"
     Owner = "AC-QA"
-  #Introducing error}
+  
 
   lifecycle {
     create_before_destroy = true

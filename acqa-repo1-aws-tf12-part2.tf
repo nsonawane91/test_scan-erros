@@ -12,7 +12,7 @@ resource "aws_acm_certificate" "acqa-test-acm1" {
     Name = format("%s-acm1", var.acqaPrefix)
     ACQAResource = "true"
     Owner = "AC-QA"
-  }
+  #Introducing error}
 
   lifecycle {
     create_before_destroy = true

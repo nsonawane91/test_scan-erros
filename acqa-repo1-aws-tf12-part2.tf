@@ -8,7 +8,7 @@ resource "aws_acm_certificate" "acqa-test-acm1" {
   domain_name       = "acqatest.com"
   validation_method = "DNS"
 
-  tagsss = {
+  tags = {
     Name = format("%s-acm1", var.acqaPrefix)
     ACQAResource = "true"
     Owner = "AC-QA"
@@ -20,7 +20,7 @@ resource "aws_acm_certificate" "acqa-test-acm1" {
 }
 
 # Create SSM parameter resource
-resourceeee "aws_ssm_parameter" "acqa-test-ssmparam1" {
+resource "aws_ssm_parameter" "acqa-test-ssmparam1" {
   name  = "acqa-test-ssmparam1"
   type  = "String"
   value = "bar"
